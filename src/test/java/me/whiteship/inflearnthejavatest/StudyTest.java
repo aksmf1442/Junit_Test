@@ -1,27 +1,33 @@
 package me.whiteship.inflearnthejavatest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator.ReplaceUnderscores;
 import org.junit.jupiter.api.Test;
 
+// DisplayNameGeneration 우선순위 낮음.
+@DisplayNameGeneration(ReplaceUnderscores.class)
 class StudyTest {
   @Test
-  void create(){
+  @DisplayName("스터디 만들기 😎")
+  void create_new_study(){
     Study study = new Study();
+    // sutdy의 상태가 NULL이 아니어야 한다.
     assertNotNull(study);
+    
     System.out.println("create");
   }
 
 
-  //Disabled를 사용하면 test를 돌리지 않는다.
   @Test
-  @Disabled
-  void create1(){
+  void create_new_study_again(){
     System.out.println("create1");
   }
 
