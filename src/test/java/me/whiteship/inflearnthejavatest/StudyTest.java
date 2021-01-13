@@ -1,8 +1,8 @@
 package me.whiteship.inflearnthejavatest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,11 +18,11 @@ class StudyTest {
   @Test
   @DisplayName("스터디 만들기 😎")
   void create_new_study(){
-    Study study = new Study();
-    // sutdy의 상태가 NULL이 아니어야 한다.
-    assertNotNull(study);
+    assertTimeout(Duration.ofMillis(100), () -> {
+      new Study(10);
+      Thread.sleep(100);
+    });
     
-    System.out.println("create");
   }
 
 
