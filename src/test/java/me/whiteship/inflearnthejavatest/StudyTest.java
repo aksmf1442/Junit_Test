@@ -1,6 +1,6 @@
 package me.whiteship.inflearnthejavatest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 import java.time.Duration;
 import org.junit.jupiter.api.AfterAll;
@@ -22,7 +22,6 @@ class StudyTest {
       new Study(10);
       Thread.sleep(100);
     });
-    
   }
 
 
@@ -42,7 +41,6 @@ class StudyTest {
   static void afterAll(){
     System.out.println("after all");
   }
-
 
   // 각각의 테스트를 실행하기 전에 실행된다.
   @BeforeEach
